@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenera AI Video</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f1117;
+            color: white;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #292d38;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            color: #aeb4c0;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #343945;
+            background: #191c24;
+            color: white;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        select {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border-radius: 10px;
+            background: #191c24;
+            color: white;
+            border: 1px solid #343945;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #111;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .video-box {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px dashed #454b58;
+            border-radius: 12px;
+            text-align: center;
+            color: #aeb4c0;
+        }
+
+        video {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 12px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎬 Tenera AI Video</h1>
+    <p>Transforme tes idées en vidéos avec l'IA</p>
+</header>
+
+<main>
+
+    <textarea id="prompt"
+        placeholder="Décris la vidéo que tu veux créer..."></textarea>
+
+    <select id="style">
+        <option value="realistic">🎥 Réaliste</option>
+        <option value="cinematic">🎬 Cinématique</option>
+        <option value="animation">🎨 Animation</option>
+        <option value="anime">✨ Anime</option>
+    </select>
+
+    <button onclick="generateVideo()">
+        🚀 Générer la vidéo
+    </button>
+
+    <div class="video-box">
+        <div id="status">
+            Ta vidéo apparaîtra ici.
+        </div>
+
+        <video id="resultVideo" controls></video>
+    </div>
+
+</main>
+
+<script>
+
+async function generateVideo() {
+
+    const prompt = document.getElementById("prompt").value;
+    const style = document.getElementById("style").value;
+    const status = document.getElementById("status");
+
+    if (!prompt.trim()) {
+        status.innerText = "⚠️ Écris d'abord une description.";
+        return;
+    }
+
+    status.innerText = "⏳ Génération de la vidéo...";
+
+    /*
+       L'API IA sera connectée ici.
+       On ne met PAS la clé API dans cette page.
+    */
+
+    console.log("Prompt :", prompt);
+    console.log("Style :", style);
+
+    status.innerText =
+        "✅ Ton prompt est prêt. Prochaine étape : connecter l'IA vidéo.";
+
+}
+
+</script>
+
+</body>
+</html>

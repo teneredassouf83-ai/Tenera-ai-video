@@ -1,0 +1,13 @@
+{
+  "name": "tenera-ai-video",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@fal-ai/client": "latest",
+    "cors": "latest",
+    "express": "latest"
+  }
+}
