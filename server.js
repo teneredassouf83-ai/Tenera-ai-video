@@ -52,4 +52,4 @@ app.post("/generate", async (req, res) => {
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`Tenera AI Video démarré sur le port ${PORT}`);
 });
-                
+            
